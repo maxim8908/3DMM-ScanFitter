@@ -18,7 +18,7 @@ Built on **PyTorch** and **PyTorch3D**.
 ```mermaid
 flowchart TD
     A[Scanned Face Mesh]
-    B["Chamfer Optimization<br/>Dense scan alignment"]
+    B["Chamfer Optimization<br/>Hybrid loss: Chamfer distance + Landmark loss"]
     C["Free-Vertex Refinement<br/>Unlock per-vertex offsets"]
     D["Regularization<br/>Laplacian smoothing<br/>Normal consistency"]
     E[Dense Reconstructed Output]
