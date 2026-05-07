@@ -13,6 +13,39 @@ Built on **PyTorch** and **PyTorch3D**.
 
 ---
 
+## Arhitecture
+
+```mermaid
+flowchart TD
+    A[Scanned Face Mesh]
+    B[Chamfer Optimization]
+    B1[Dense scan alignment]
+    C[Uses Chamfer Distance]
+    D[Uses Landmark Loss]
+    E[Optimizes Dense Alignment]
+    F[Free-Vertex Refinement]
+    F1[Unlock per-vertex offsets]
+    G[Laplacian Smoothing]
+    H[Normal Consistency Regularization]
+    I[Dense Reconstructed Output]
+
+    A --> B
+    B --> B1
+    B --> C
+    B --> D
+    B --> E
+    B1 --> F
+    E --> F
+    F --> F1
+    F --> G
+    F --> H
+    F1 --> I
+    G --> I
+    H --> I
+```
+
+---
+
 ## Fit Stages
 ### **Stage 1 — Landmark Fitting:**
 Optimizes PCA coefficients and pose to match sparse 3D landmarks.
